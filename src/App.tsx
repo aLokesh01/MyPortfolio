@@ -13,13 +13,13 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* This line is the fix: it automatically adjusts the base path */}
-     <BrowserRouter basename={import.meta.env.BASE_URL}>
-  <Routes>
-    <Route path="/" element={<Index />} />
-    <Route path="*" element={<NotFound />} />
-  </Routes>
-</BrowserRouter>
+      {/* THIS IS THE CRITICAL LINE */}
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
