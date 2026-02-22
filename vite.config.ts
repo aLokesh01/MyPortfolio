@@ -3,10 +3,9 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Sets the base path: / for local dev, /MyPortfolio/ for GitHub production
-  base: mode === 'development' ? '/' : '/MyPortfolio/',
+  // Local dev uses '/', GitHub production uses '/MyPortfolio/'
+  base: mode === 'production' ? '/MyPortfolio/' : '/',
   server: {
     host: "::",
     port: 8080,

@@ -13,11 +13,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* The basename ensures the app knows it's living in the /MyPortfolio/ folder */}
-      <BrowserRouter basename="/MyPortfolio">
+      {/* This line is the fix: it automatically adjusts the base path */}
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
