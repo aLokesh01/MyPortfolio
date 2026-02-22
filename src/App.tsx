@@ -13,7 +13,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* The basename ensures the app knows it's living in the /MyPortfolio/ folder */}
+      <BrowserRouter basename="/MyPortfolio">
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
